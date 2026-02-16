@@ -72,7 +72,7 @@ def parse_arguments():
         default=5,
         help='Block size for stereo matching (default: 5)'
     )
-    
+
     return parser.parse_args()
 
 

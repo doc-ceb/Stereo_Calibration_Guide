@@ -68,7 +68,7 @@ def parse_arguments():
         action='store_true',
         help='Show detected corners in images'
     )
-    
+
     return parser.parse_args()
 
 

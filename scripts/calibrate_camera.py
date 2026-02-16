@@ -63,7 +63,7 @@ def parse_arguments():
         default='jpg',
         help='Image file extension (default: jpg)'
     )
-    
+
     return parser.parse_args()
 
 
