@@ -1,8 +1,8 @@
 # Stereo Camera Calibration Guide
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Python 3.13+](https://img.shields.io/badge/python-3.13+-blue.svg)](https://www.python.org/downloads/)
-[![OpenCV 4.13+](https://img.shields.io/badge/OpenCV-4.13+-green.svg)](https://opencv.org/)
+[![Python 3.13](https://img.shields.io/badge/python-3.13-blue.svg)](https://www.python.org/downloads/)
+[![OpenCV 4.13](https://img.shields.io/badge/OpenCV-4.13-green.svg)](https://opencv.org/)
 
 A comprehensive Jupyter notebook for **stereo camera calibration** using OpenCV and Python. Features a guided capture system with pre-defined target poses for optimal calibration quality.
 
@@ -14,13 +14,11 @@ A comprehensive Jupyter notebook for **stereo camera calibration** using OpenCV 
 ## 🎯 Features
 
 - ✅ **Guided Capture System**: Pre-defined target poses ensure optimal spatial coverage and angle diversity
-- ✅ **Physics-Based Calibration**: Constraints for realistic camera parameters (square pixels, centered principal point)
+- ✅ **Physics-Based Calibration**: Constraints for realistic camera parameters (square pixels, zero tangental distortion)
 - ✅ **Monocular Calibration**: Individual camera intrinsics and distortion coefficients
 - ✅ **Stereo Calibration**: Relative pose (R, T) and epipolar geometry (E, F matrices)
-- ✅ **Stereo Rectification**: Horizontal epipolar line alignment for efficient stereo matching
+- ✅ **Stereo Rectification**: Horizontally align epipolar lines for efficient stereo matching
 - ✅ **Live Demo**: Real-time rectified view with corner detection and quality metrics
-- ✅ **Comprehensive Visualization**: Dark-themed plots with color-coded quality indicators
-- ✅ **Save/Load Functionality**: Persist complete calibration package with optional dataset
 
 ---
 
@@ -29,8 +27,11 @@ A comprehensive Jupyter notebook for **stereo camera calibration** using OpenCV 
 ### Cameras
 - **2× USB webcams** (tested with Logitech C270, C920, C930e)
 - Recommended: Same model for both cameras
-- Minimum resolution: 640×480
-- Fixed focus preferred (disable autofocus if possible)
+- Recommended resolution (for block matching): 640×480
+- Fixed focus
+
+### Rigid Mounting
+- Left-Right camera mounting: [example](https://a.co/d/0dJ8drms "Amazon")
 
 ### Calibration Pattern
 - **Chessboard**: 9×6 inner corners (10×7 total squares)
@@ -40,10 +41,10 @@ A comprehensive Jupyter notebook for **stereo camera calibration** using OpenCV 
   - Avoid: Paper alone (warps easily)
 
 ### Printing Requirements
-- **Paper**: A4 or Letter size
+- **Paper**: Letter size or A4
 - **DPI**: 300 minimum
-- **Scaling**: 100% (actual size) - **CRITICAL!**
-- **Verification**: Measure printed squares with ruler
+- **Scaling**: 100% (actual size)
+- **Verification**: Measure printed squares with vernier caliper or ruler
 
 ---
 
@@ -51,25 +52,21 @@ A comprehensive Jupyter notebook for **stereo camera calibration** using OpenCV 
 
 ### Python Environment
 ```bash
-# Python 3.8 or higher
-python --version  # Should be 3.8+
+# Python 3.11+
+python --version  # Should be 3.13
 ```
 
 ### Dependencies
-```bash
-pip install opencv-python numpy matplotlib jupyter
-```
 
-Or using conda:
+**Tested versions:**
 ```bash
-conda install -c conda-forge opencv numpy matplotlib jupyter
+pip install -r requirements.txt 
 ```
+or manually
 
-### Optional (for enhanced features)
 ```bash
-pip install opencv-contrib-python  # Extra OpenCV modules
+pip install opencv-python==4.12.0.88 opencv_contrib_python==4.13.0.92 numpy==2.4.2 matplotlib==3.10.8 jupyter
 ```
-
 ---
 
 ## 🚀 Quick Start
@@ -374,7 +371,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 For questions, issues, or suggestions:
 - **GitHub Issues**: [Report a bug](https://github.com/doc-ceb/Stereo_Calibration_Guide/issues)
-- **Email**: [your-email@example.com]
+- **Email**: [angel.ceballos.esp@gmail.com]
 
 ---
 
