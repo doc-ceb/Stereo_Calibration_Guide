@@ -24,7 +24,11 @@ share/python-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+*.npz
 MANIFEST
+calibration_frames_left/
+calibration_frames_right/
+stereo_dataset/
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
