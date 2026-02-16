@@ -65,7 +65,7 @@ pip install -r requirements.txt
 or manually
 
 ```bash
-pip install opencv-python==4.12.0.88 opencv_contrib_python==4.13.0.92 numpy==2.4.2 matplotlib==3.10.8 jupyter
+pip install opencv-python==4.12.0.88 opencv_contrib_python==4.13.0.92 numpy>=2.0.0,<2.3.0 matplotlib==3.10.8 jupyter
 ```
 ---
 
