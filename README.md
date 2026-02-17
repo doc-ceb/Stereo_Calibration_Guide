@@ -196,6 +196,7 @@ num_images        # Number of image pairs used
 - Alignment score calculation
 - Automatic capture at threshold
 - Progress tracking
+- <img src="././figures/guided_calib.gif" width="300">
 
 ### Section 4: Monocular Calibration
 - Individual calibration for each camera
@@ -208,6 +209,7 @@ num_images        # Number of image pairs used
 - Optional refinement with subset selection
 - Rotation split analysis (R1/R2)
 - Rectification quality plots
+- <img src="././figures/guided_stereo.gif" width="600">
 
 ### Section 6: Live Rectified Demo
 - Real-time rectified view
