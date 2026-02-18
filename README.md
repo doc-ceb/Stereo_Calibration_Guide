@@ -19,6 +19,7 @@ A comprehensive Jupyter notebook for **stereo camera calibration** using OpenCV 
 - ✅ **Stereo Calibration**: Relative pose (R, T) and epipolar geometry (E, F matrices)
 - ✅ **Stereo Rectification**: Horizontally align epipolar lines for efficient stereo matching
 - ✅ **Live Demo**: Real-time rectified view with corner detection and quality metrics
+- 🎁 **Bonus**: Real-time depth estimation with HSV color detection and interactive measurements
 
 ---
 
@@ -141,6 +142,7 @@ Run **Section 6** for live rectified demo:
 | `right_camera_params.npz` | Right camera intrinsics (K, D) | ~2 KB |
 | `stereo_params.npz` | Complete stereo calibration | ~500 KB |
 | `stereo_params_dataset/` | Captured images (optional) | ~10-50 MB |
+| `depth_frame_YYYYMMDD_HHMMSS.png` | Saved depth estimator frames (bonus) | ~500 KB each |
 
 ### Data Structure (stereo_params.npz)
 
@@ -216,6 +218,38 @@ num_images        # Number of image pairs used
 - Corner detection validation
 - Epipolar line overlay
 - Color-coded alignment quality
+
+---
+
+## 🎁 Bonus: Real-Time Stereo Depth Estimation
+
+After calibration, use **stereo_depth_estimator_color.py** for real-time depth mapping with color-based region detection.
+
+- <img src="././figures/stereo_depth.gif" width="600">
+
+### Quick Start
+```bash
+python stereo_depth_estimator_color.py
+```
+**Requires**: `stereo_params.npz` from calibration
+
+### Key Features
+- Real-time depth mapping (RGB + Disparity + Depth views)
+- HSV color detection for selective ROI processing (2-5× speedup)
+- Interactive measurement box (drag + W/A/S/D to resize)
+- Click-to-select colors on HSV preview
+- 15 trackbars for disparity and color tuning
+
+### Controls
+- `esc`: Quit | `r`: Reset settings
+- **Mouse**: Drag measurement box, click HSV image to auto-set color thresholds
+- **W/A/S/D**: Resize measurement box
+
+### Quick Workflow
+1. Enable ColorDetect trackbar
+2. Click object in HSV preview to set color
+3. Fine-tune H/S/V thresholds
+4. Drag measurement box to query depth (mm)
 
 ---
 
